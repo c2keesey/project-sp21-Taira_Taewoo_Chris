@@ -1,5 +1,6 @@
 import networkx as nx
 
+
 def is_valid_solution(G, c, k):
     """
     Checks whether D is a valid mapping of G, by checking every room adheres to the stress budget.
@@ -25,6 +26,7 @@ def is_valid_solution(G, c, k):
     assert H.has_node(size - 1), 'Invalid Solution: Target vertex is removed'
 
     return nx.is_connected(H)
+
 
 def calculate_score(G, c, k):
     """
