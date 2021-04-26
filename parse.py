@@ -5,6 +5,7 @@ import networkx as nx
 
 import utils
 
+
 def validate_file(path):
     """File must not exceed 100KB and must contain only numbers and spaces"""
     if os.path.getsize(path) > 100000:
@@ -15,6 +16,7 @@ def validate_file(path):
             print(f"{path} contains characters that are not numbers and spaces")
             return False
     return True
+
 
 def read_input_file(path, min_size=None, max_size=None):
     """
