@@ -78,6 +78,7 @@ def write_input_file(G, path):
         fo.writelines("\n".join(lines))
         fo.close()
 
+
 def read_output_file(G, path):
     """
     Parses and validates an output file
@@ -136,6 +137,7 @@ def read_output_file(G, path):
             removed_edges.append((u,v))
 
     return utils.calculate_score(G, cities, removed_edges)
+
 
 def write_output_file(G, c, k, path):
     """

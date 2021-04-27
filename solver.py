@@ -14,7 +14,17 @@ def solve(G):
         c: list of cities to remove
         k: list of edges to remove
     """
-    pass
+    v_size = G.number_of_nodes
+    if 20 <= v_size <= 30:
+        k_max = 15
+        c_max = 1
+    elif 31 <= v_size <= 50:
+        k_max = 50
+        c_max = 3
+    else:
+        k_max = 100
+        c_max = 5
+
 
 
 # Here's an example of how to run your solver.
@@ -32,12 +42,12 @@ def solve(G):
 
 
 # For testing a folder of inputs to create a folder of outputs, you can use glob (need to import it)
-# if __name__ == '__main__':
-#     inputs = glob.glob('inputs/*')
-#     for input_path in inputs:
-#         output_path = 'outputs/' + basename(normpath(input_path))[:-3] + '.out'
-#         G = read_input_file(input_path)
-#         c, k = solve(G)
-#         assert is_valid_solution(G, c, k)
-#         distance = calculate_score(G, c, k)
-#         write_output_file(G, c, k, output_path)
+if __name__ == '__main__':
+    inputs = glob.glob('inputs/*')
+    for input_path in inputs:
+        output_path = 'outputs/' + basename(normpath(input_path))[:-3] + '.out'
+        G = read_input_file(input_path)
+        c, k = solve(G)
+        assert is_valid_solution(G, c, k)
+        distance = calculate_score(G, c, k)
+        write_output_file(G, c, k, output_path)
